@@ -3,7 +3,13 @@ import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 
 function TodoList() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(
+    () => JSON.parse(window.localStorage.getItem("todos")) || []
+  );
+
+  React.useEffect(() => {
+    window.localStorage.setItem("todos", JSON.stringify(todos));
+  });
 
   const addTodo = (todo) => {
     if (!todo.text || /^\s*$/.test(todo.text)) {
