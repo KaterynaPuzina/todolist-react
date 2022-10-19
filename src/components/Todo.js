@@ -37,7 +37,6 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
         defaultChecked={todo.isComplete}
       />{" "}
       <label htmlFor={todo.id}>{todo.text}</label>
-      <span className="checkmark"></span>
       <div className="icons">
         <button
           aria-label={"Delete"}

@@ -30,7 +30,7 @@ function TodoForm(props) {
       {props.edit ? (
         <>
           <input
-            aria-label={`Edit  todo`}
+            aria-label={"Edit  todo"}
             type="text"
             placeholder="Update your item"
             value={input}
@@ -44,7 +44,7 @@ function TodoForm(props) {
       ) : (
         <>
           <input
-            aria-label={`Add a todo`}
+            aria-label={"Add a todo"}
             type="text"
             placeholder="Add a todo"
             value={input}
