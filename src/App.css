@@ -71,6 +71,21 @@ h1 {
   text-transform: capitalize;
 }
 
+.restart-button {
+  padding: 16px;
+  border: none;
+  border-radius: 4px 4px 4px 4px;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    rgb(239, 196, 213) 0%,
+    rgb(198, 182, 214) 100%
+  );
+  color: #6C7394;
+  text-transform: capitalize;
+}
+
 .todo-input.edit {
   border: 2px solid #149fff;
 }
@@ -149,15 +164,19 @@ h1 {
 .icons {
   display: flex;
   align-items: center;
-  font-size: 24px;
+  font-size: 30px;
   cursor: pointer;
 }
 
 .delete-icon {
   margin-right: 5px;
   color: #fff;
+  height: 30px;
+  width: 30px;
 }
 
 .edit-icon {
   color: #fff;
+  height: 30px;
+  width: 30px;
 }

@@ -18,6 +18,8 @@ function TodoList() {
 
     const newTodos = [todo, ...todos];
     setTodos(newTodos);
+
+    console.log(todos);
   };
 
   const updateTodo = (todoId, newValue) => {
@@ -45,6 +47,10 @@ function TodoList() {
     setTodos(updatedTodos);
   };
 
+  const restartTodo = () => {
+    setTodos([]);
+  };
+
   return (
     <div>
       <h1>What's the Plan for Today?</h1>
@@ -55,6 +61,9 @@ function TodoList() {
         removeTodo={removeTodo}
         updateTodo={updateTodo}
       />
+      <button className="restart-button" onClick={restartTodo}>
+        Clear Todo list
+      </button>
     </div>
   );
 }

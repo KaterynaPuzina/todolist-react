@@ -31,18 +31,36 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
       key={index}
     >
       <Checkbox
+        id={todo.id}
         key={todo.id}
         onClick={() => completeTodo(todo.id)}
         defaultChecked={todo.isComplete}
       />{" "}
-      {todo.text}
+      <label htmlFor={todo.id}>{todo.text}</label>
       <span className="checkmark"></span>
       <div className="icons">
-        <RiCloseCircleLine
+        <button
+          aria-label={"Delete"}
+          style={{
+            background: "none",
+            border: "none",
+            height: "34px",
+            width: "34px",
+            lineHeight: 0,
+          }}
           onClick={() => removeTodo(todo.id)}
-          className="delete-icon"
-        />
-        <TiEdit
+        >
+          <RiCloseCircleLine className="delete-icon" />
+        </button>
+        <button
+          aria-label={"Edit"}
+          style={{
+            background: "none",
+            border: "none",
+            height: "34px",
+            width: "34px",
+            lineHeight: 0,
+          }}
           onClick={() =>
             setEdit({
               id: todo.id,
@@ -50,23 +68,12 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
               isComplete: todo.isComplete,
             })
           }
-          className="edit-icon"
-        />
+        >
+          <TiEdit className="edit-icon" />
+        </button>
       </div>
     </div>
   ));
 }
-
-/*<div key={todo.id} onClick={() => completeTodo(todo.id)}>
-        {todo.text}
-      </div>*/
-
-/*     <div key={todo.id}>
-      <Checkbox
-        onClick={() => completeTodo(todo.id)}
-        defaultChecked={todo.isComplete}
-      />
-      <div onClick={() => completeTodo(todo.id)}>{todo.text}</div>
-    </div>*/
 
 export default Todo;

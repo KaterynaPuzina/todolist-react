@@ -19,6 +19,7 @@ function TodoForm(props) {
     props.onSubmit({
       id: Math.floor(Math.random() * 10000),
       text: input,
+      isComplete: false,
     });
 
     setInput("");
@@ -29,10 +30,11 @@ function TodoForm(props) {
       {props.edit ? (
         <>
           <input
+            aria-label={`Edit  todo`}
             type="text"
             placeholder="Update your item"
             value={input}
-            name="text"
+            name="edit text"
             className="todo-input edit"
             onChange={handleChange}
             ref={inputRef}
@@ -42,10 +44,11 @@ function TodoForm(props) {
       ) : (
         <>
           <input
+            aria-label={`Add a todo`}
             type="text"
             placeholder="Add a todo"
             value={input}
-            name="text"
+            name="add text"
             className="todo-input"
             onChange={handleChange}
             ref={inputRef}

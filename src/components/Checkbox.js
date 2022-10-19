@@ -1,8 +1,14 @@
 import React from "react";
 
-function Checkbox({ onClick, defaultChecked }) {
+function Checkbox({ key, id, onClick, defaultChecked }) {
   return (
-    <input type="checkbox" onClick={onClick} defaultChecked={defaultChecked} />
+    <input
+      key={key}
+      id={id}
+      type="checkbox"
+      onClick={onClick}
+      defaultChecked={defaultChecked}
+    />
   );
 }
 
